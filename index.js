@@ -61,7 +61,7 @@ if (hacker1<hacker2){
     console.log("Smth went wrong")
   }
 
-  // BONUS 1
+// BONUS 1
   let longText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas dolor at enim ornare ornare. Aenean nulla libero, commodo ut pellentesque at, pellentesque a arcu. Nulla dignissim cursus erat at blandit. Suspendisse consequat vitae tellus ac iaculis. Etiam convallis risus id sapien dictum dapibus in a velit. Phasellus ante augue, congue sit amet egestas vitae, pretium venenatis est. Ut at tempor metus, ut sollicitudin erat. Nullam venenatis convallis augue ultrices lacinia. Integer facilisis ultrices magna ut aliquam. Donec neque mi, bibendum in massa a, semper laoreet eros. Duis porta lacus at ex sodales, a rhoncus quam accumsan. Vivamus et augue ipsum. Fusce vestibulum enim eget faucibus tempus. Phasellus placerat ligula eget lobortis sagittis. Vivamus elementum, erat vel vehicula porta, nisi eros sollicitudin turpis, ut finibus diam justo vitae arcu.
 
 Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse accumsan sodales ex, in molestie purus venenatis ac. Aliquam interdum, dui sed molestie varius, ex augue vulputate enim, et lobortis nunc eros vitae est. Nullam tellus ex, semper nec purus quis, hendrerit cursus ipsum. Maecenas pulvinar molestie ligula, ac condimentum lectus ornare sed. Morbi gravida molestie tempus. Fusce sed massa at enim condimentum dapibus venenatis in sem. Pellentesque diam justo, viverra sit amet molestie non, placerat et velit.
@@ -93,3 +93,39 @@ Maecenas gravida, odio a dignissim semper, nisi quam eleifend erat, sed ultricie
   
   console.log(count)
 
+// BONUS 2
+
+let phraseToCheck = "No 'x' in Nixon?!"
+let phraseToCheckLowerCase = phraseToCheck.toLowerCase()
+let phraseNoSymbols = ""
+for (let i = 0; i < phraseToCheckLowerCase.length; i++){
+  if (phraseToCheckLowerCase[i] === ' ' || 
+      phraseToCheckLowerCase[i] === '.' || 
+      phraseToCheckLowerCase[i] === ',' || 
+      phraseToCheckLowerCase[i] === '!' || 
+      phraseToCheckLowerCase[i] === '?' || 
+      phraseToCheckLowerCase[i] === ':' || 
+      phraseToCheckLowerCase[i] === ';' || 
+      phraseToCheckLowerCase[i] === `'` || 
+      phraseToCheckLowerCase[i] === '-' || 
+      phraseToCheckLowerCase[i] === '—' || 
+      phraseToCheckLowerCase[i] === '"' ){
+    continue
+  } else {
+    phraseNoSymbols += phraseToCheckLowerCase[i]
+  }
+}
+
+let phraseReverse = ""
+
+for (let i = phraseNoSymbols.length-1; i >= 0; i-- ){
+  
+  phraseReverse += phraseNoSymbols[i]
+}
+
+
+if (phraseNoSymbols === phraseReverse){
+  console.log("It's a Palindrome")
+} else {
+  console.log("Not a Palindrome")
+}
